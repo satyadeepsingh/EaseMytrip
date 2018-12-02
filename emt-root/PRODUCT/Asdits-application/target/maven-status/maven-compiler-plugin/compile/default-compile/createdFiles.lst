@@ -1,6 +1,7 @@
 org\emt\com\asdits\utils\CryptoUtils.class
 org\emt\com\asdits\action\UserAction.class
 org\emt\com\asdits\api\controllers\AbstractApi.class
+org\emt\com\asdits\security\configure\SecurityConfigurer.class
 org\emt\com\asdits\db\dao\UsersDao.class
 org\emt\com\asdits\controllers\ViewControllerApi10.class
 org\emt\com\AdvancedShippingDataIntegrationTrackingService.class

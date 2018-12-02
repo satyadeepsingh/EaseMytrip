@@ -4,17 +4,27 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Index;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+
 @Entity
-@Table(name="ASDITS_LOGIN")
+@Table(name="EMT_LOGIN", indexes= {@Index(name="LOGIN_INDEX_USERNAME", columnList="LOGIN_USER_ID")})
 public class Login implements Serializable{
 	
 	private static final long serialVersionUID = 3529212687615972496L;
-
+	
 	@Id
-	@Column(name="USERNAME")
+	@Column(name="LOGIN_USER_ID")
+	@SequenceGenerator(name = "LoginUserIdSeq", sequenceName="SEQ_LOGIN_USERID", allocationSize=50)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="LoginUserIdSeq")
+	private Long userId;
+	
+	@Column(name="USERNAME",nullable=false,unique=true)
 	private String username;
 	
 	@Column(name="PASSWORD")

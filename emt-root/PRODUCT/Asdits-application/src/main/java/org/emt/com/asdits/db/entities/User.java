@@ -5,16 +5,25 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="ASDITS_USERS")
+@Table(name="EMT_USERS")
 public class User implements Serializable{
 	
 	private static final long serialVersionUID = -6286189815268255594L;
-
+	
+	@Id
+	@SequenceGenerator(name="UsersUserIdSeq", sequenceName="SEQ_USERS_USERID", allocationSize=50)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="UsersUserIdSeq0")
+	@Column(name="USER_ID")
+	private Long userId;
+	
 	@Column(name="NAME")
 	private String name;
 	
@@ -38,8 +47,7 @@ public class User implements Serializable{
 	
 	@Column(name="COUNTRY")
 	private String country;
-	
-	@Id
+
 	@Column(name="EMAIL")
 	private String email;
 	
