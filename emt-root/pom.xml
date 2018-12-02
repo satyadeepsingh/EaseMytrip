@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.emt.com</groupId>
+	<artifactId>emt-root</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>ROOT</name>
+	<modules>
+		<module>PRODUCT</module>
+    </modules>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	
+		<maven.dependency.plugin.version>2.10</maven.dependency.plugin.version>
+		<maven.assembly.plugin.version>2.6</maven.assembly.plugin.version>
+		<maven.deploy.plugin.version>2.4</maven.deploy.plugin.version>		
+		<monitoring.version>1.4</monitoring.version>
+		<profile.classifier>classes</profile.classifier>
+	</properties>
+	<build>
+		<pluginManagement>
+			<plugins>
+				
+				<plugin>
+			    	<artifactId>maven-dependency-plugin</artifactId>
+			    	<version>${maven.dependency.plugin.version}</version>
+			    </plugin>
+				<plugin>
+			    	<artifactId>maven-assembly-plugin</artifactId>
+			    	<version>${maven.assembly.plugin.version}</version>
+			    </plugin>
+			    <plugin>
+			    	<artifactId>maven-deploy-plugin</artifactId>
+				<version>${maven.deploy.plugin.version}</version>
+			    </plugin>
+			</plugins>
+		</pluginManagement>
+		</build>
+</project>
