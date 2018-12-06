@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
 @Table(name="EMT_USERS")
@@ -20,7 +21,7 @@ public class User implements Serializable{
 	
 	@Id
 	@SequenceGenerator(name="UsersUserIdSeq", sequenceName="SEQ_USERS_USERID", allocationSize=50)
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="UsersUserIdSeq0")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="UsersUserIdSeq")
 	@Column(name="USER_ID")
 	private Long userId;
 	
@@ -48,7 +49,7 @@ public class User implements Serializable{
 	@Column(name="COUNTRY")
 	private String country;
 
-	@Column(name="EMAIL")
+	@Column(name="EMAIL", unique=true, nullable=false)
 	private String email;
 	
 	public User() {

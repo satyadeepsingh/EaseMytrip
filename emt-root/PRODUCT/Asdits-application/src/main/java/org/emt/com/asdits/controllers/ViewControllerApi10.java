@@ -17,4 +17,9 @@ public class ViewControllerApi10 {
 	public String showLoginPage() {
 		return "login";
 	}
+	
+	@RequestMapping(method=RequestMethod.GET, value=IConstant.WELCOME)
+	public String showWelcomePage() {
+		return "index";
+	}
 }

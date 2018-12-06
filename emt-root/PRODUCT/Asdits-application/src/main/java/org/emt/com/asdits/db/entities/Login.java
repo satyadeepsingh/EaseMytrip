@@ -1,34 +1,37 @@
 package org.emt.com.asdits.db.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Index;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name="EMT_LOGIN", indexes= {@Index(name="LOGIN_INDEX_USERNAME", columnList="LOGIN_USER_ID")})
+@Table(name="EMT_LOGIN", indexes= {@Index(name="LOGIN_INDEX_USERNAME", columnList="USERNAME")})
 public class Login implements Serializable{
 	
 	private static final long serialVersionUID = 3529212687615972496L;
 	
 	@Id
-	@Column(name="LOGIN_USER_ID")
-	@SequenceGenerator(name = "LoginUserIdSeq", sequenceName="SEQ_LOGIN_USERID", allocationSize=50)
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="LoginUserIdSeq")
-	private Long userId;
-	
 	@Column(name="USERNAME",nullable=false,unique=true)
 	private String username;
 	
 	@Column(name="PASSWORD")
 	private String password;
+	
+	@Column(name="ROLE", nullable=false)
+	@OneToMany(fetch=FetchType.LAZY,mappedBy="login")
+	private List<UserRole> role;
 		
 	public Login() {
 		super();
@@ -39,6 +42,7 @@ public class Login implements Serializable{
 		this.username = username;
 		this.password = password;
 	}
+	
 
 	public String getUsername() {
 		return username;
@@ -55,5 +59,15 @@ public class Login implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public List<UserRole> getRole() {
+		return role;
+	}
+
+	public void setRole(List<UserRole> role) {
+		this.role = role;
+	}
+	
+	
 
 }

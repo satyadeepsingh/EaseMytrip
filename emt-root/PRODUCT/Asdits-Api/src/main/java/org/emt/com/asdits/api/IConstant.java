@@ -7,6 +7,7 @@ public interface IConstant {
 	public static final String TEST = "/test";
 	public static final String HOME = "/";
 	public static final String LOGIN = "/login";
+	public static final String WELCOME = "/welcome";
 	
 
 }

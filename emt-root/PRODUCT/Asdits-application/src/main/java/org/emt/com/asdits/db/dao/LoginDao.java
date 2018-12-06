@@ -9,5 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Transactional
 public interface LoginDao extends CrudRepository<Login, String> {
-
+	
+	public Login findByUsername(String username);
 }
