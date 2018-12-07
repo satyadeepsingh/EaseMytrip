@@ -1,0 +1,18 @@
+{
+  "name" : "admin",
+  "username" : "admin@gmail.com",
+  "password" : "admin",
+  "contactnumber" : "000",
+  "email" : "admin@gmail.com",
+  
+  "address" : {
+    "address1" : "abc",
+    "address2" : "xyz",
+    "city" : "Delhi",
+    "state" : "Delhi",
+    "country" : "india",
+    "pincode" : "110091"
+    
+  }
+  
+}
