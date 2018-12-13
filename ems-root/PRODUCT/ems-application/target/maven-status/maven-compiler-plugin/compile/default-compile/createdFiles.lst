@@ -1,0 +1,15 @@
+org\ems\com\asdits\action\UserAction.class
+org\ems\com\asdits\db\dao\UserRoleDao.class
+org\ems\com\asdits\db\entities\User.class
+org\ems\com\asdits\controllers\ViewControllerApi10.class
+org\ems\com\asdits\controllers\UserControllerApi10.class
+org\ems\com\asdits\api\controllers\AbstractApi.class
+org\ems\com\asdits\security\configure\PasswordEncoder.class
+org\ems\com\AdvancedShippingDataIntegrationTrackingService.class
+org\ems\com\asdits\db\dao\UsersDao.class
+org\ems\com\asdits\security\configure\SecurityConfigurer.class
+org\ems\com\asdits\db\entities\Login.class
+org\ems\com\asdits\utils\CryptoUtils.class
+org\ems\com\asdits\service\UserService.class
+org\ems\com\asdits\db\entities\UserRole.class
+org\ems\com\asdits\db\dao\LoginDao.class

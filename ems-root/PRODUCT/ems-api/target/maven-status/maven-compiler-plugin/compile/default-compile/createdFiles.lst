@@ -1,0 +1,7 @@
+org\ems\com\asdits\api\model\CreateUserRequest.class
+org\ems\com\asdits\api\model\BasicRestResponse.class
+org\ems\com\asdits\api\IConstant.class
+org\ems\com\asdits\api\action\ApiAction.class
+org\ems\com\asdits\api\model\CreateUserResponse$status.class
+org\ems\com\asdits\api\model\CreateUserResponse.class
+org\ems\com\asdits\api\model\UserAddress.class
