@@ -42,6 +42,7 @@ public class UserControllerApi10 extends AbstractApi {
 			@RequestHeader(value = IConstant.X_SESSION_ID_HEADER) String sessionId,
 			@RequestBody CreateUserRequest createUserReq) throws NoSuchAlgorithmException {
 		logger.info("In controller");
+
 		logger.info(createUserReq.toString());
 		ResponseEntity<CreateUserResponse> response = executeRequest(sessionId, new UserAction(this.userService),
 				createUserReq);

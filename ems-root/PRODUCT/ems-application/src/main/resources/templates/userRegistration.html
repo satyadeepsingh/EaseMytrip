@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>eCommerce Shipping Solution provider EaseMyShip User Registration</title> 
+    <meta charset="utf-8"> 
+    <link rel="shortcut icon" href="images/facebook.png" />
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<style>
+.float-right {
+    float : right
+}
+.clearfix {
+  overflow: auto;
+}
+.span-label {
+    font: caption;
+    color: whitesmoke;
+    font-size: 10px;
+}
+.div-registration {
+  /* background: #466368; */
+   /* background: -webkit-linear-gradient(#648880, #293f50);
+  background:    -moz-linear-gradient(#648880, #293f50);
+  background:         linear-gradient(#648880, #293f50);  */
+  background-image: url('images/divbackground.jpg');
+  background-repeat: repeat;
+
+}
+
+body {
+  background: whitesmoke;
+  color: rgb(233, 230, 230);
+  font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+</style>
+<body>
+ <!-- Grey with black text -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-grey sticky-top">
+    <a class="navbar-brand" href="/">
+        <img src="images/facebook.png" alt="EaseMyShip" style="width:100px;">
+    </a>
+    <ul class="navbar-nav ml-auto list-inline">
+        <li class="nav-item active">
+            <div class="d-inline p-2 span-label">(If you already have an account)</div>
+                <a class="nav-link d-inline p-2 text-white" href="/login">Login</a>
+            </div>   
+        </li>
+    </ul> 
+</nav>
+<div class="clearfix div-registration">
+    <div ng-app="myApp" ng-controller="httpCtrl">
+        <div class="d-inline p-2 float-left">
+            <br><h5>Hi This is registration page!</h5>
+            <h5>Hi This is registration page!</h5>
+            <h5>Hi This is registration page!</h5>
+            <h5>Hi This is registration page!</h5>
+            <h5>Hi This is registration page!</h5>
+            <h5>Hi This is registration page!</h5>
+        </div>
+        <br><br>
+        <form class="form-group float-right d-inline p-2">
+            <div class="form-inline">
+                    <input type="text" name="fname" ng-model="firstName" class="form-control float-left mb-2 mr-sm-2" max-length="40" placeholder="first name"> 
+                    <input type="text" name="lname" ng-model="lastName" class="form-control float-right mb-2 mr-sm-2" max-length="40" placeholder="last name">
+            </div>
+            <div class="form-inline">
+                    <input type="text" name="email" ng-model="useremail" class="form-control float-left mb-2 mr-sm-2" max-length="40" placeholder="email"> 
+                    <input type="password" name="password" ng-model="userpassword" class="form-control float-right mb-2 mr-sm-2" max-length="40" placeholder="password">
+            </div>
+            <div class="form-inline" style="padding-right: 5px;">
+                    <input type="text" name="addressline1" ng-model="useraddress1" class="form-control float-left mb-2 mr-sm-2" max-length="1000" placeholder="Address line 1"> 
+                    <input type="text" name="addressline2" ng-model="useraddress2" class="form-control float-right mb-2 mr-sm-2" max-length="1000" placeholder="Address line 2">
+            </div>
+            <div class="form-inline" style="padding-right: 5px;">
+                    <input type="text" name="city" ng-model="city" class="form-control float-left mb-2 mr-sm-2" max-length="1000" placeholder="city"> 
+                    <input type="text" name="state" ng-model="state" class="form-control float-right mb-2 mr-sm-2" max-length="1000" placeholder="state">
+            </div>
+            <div class="form-inline" style="padding-right: 5px;">
+                    <input type="text" name="country" ng-model="country" class="form-control float-left mb-2 mr-sm-2" max-length="1000" placeholder="country"> 
+                    <input type="text" name="pincode" ng-model="pincode" class="form-control float-left mb-2 mr-sm-2" max-length="1000" placeholder="pincode"> 
+                    
+            </div>
+            <div class="form-check mb-2 mr-sm-2">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox">Remember me
+                </label>
+            </div>
+            <button ng-click="postRequest(firstName, lastName, useremail,userpassword,useraddress1,useraddress2,city,state, country,pincode)" class="btn">Sign Up</button>
+       </form>
+       </div>
+</div>
+<script src="scripts/registration.js"></script>
+</body>
+</html>

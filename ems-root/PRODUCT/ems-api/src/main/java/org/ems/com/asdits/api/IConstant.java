@@ -8,6 +8,7 @@ public interface IConstant {
 	public static final String HOME = "/";
 	public static final String LOGIN = "/login";
 	public static final String WELCOME = "/welcome";
+	public static final String USER_REGISTRATION = "/registeruser";
 	
 
 }

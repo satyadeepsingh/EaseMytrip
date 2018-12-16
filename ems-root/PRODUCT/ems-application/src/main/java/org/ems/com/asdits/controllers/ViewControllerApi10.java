@@ -22,4 +22,9 @@ public class ViewControllerApi10 {
 	public String showWelcomePage() {
 		return "index";
 	}
+	
+	@RequestMapping(method=RequestMethod.GET, value=IConstant.USER_REGISTRATION)
+	private String registerUser() {
+		return "userRegistration";
+	}
 }

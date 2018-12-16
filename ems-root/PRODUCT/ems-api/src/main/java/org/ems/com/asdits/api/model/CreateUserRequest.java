@@ -118,6 +118,12 @@ public class CreateUserRequest {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "CreateUserRequest [name=" + name + ", username=" + username + ", password=" + password
+				+ ", contactnumber=" + contactnumber + ", address=" + address + ", email=" + email + "]";
+	}
 	
 	
 

@@ -39,7 +39,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		logger.info("checking the securty context:{}", http.securityContext().toString());
 
-		http.csrf().disable().authorizeRequests().antMatchers("/", "/login").permitAll().and().authorizeRequests()
+		http.csrf().disable().authorizeRequests().antMatchers("/", "/login","/registeruser/**").permitAll().and().authorizeRequests()
 				.antMatchers("/h2-console/**").permitAll().and().authorizeRequests()
 				.antMatchers(HttpMethod.POST, "/emt/createuser").permitAll().anyRequest().authenticated().and()
 				.formLogin().loginPage("/login").failureUrl("/login?error=true").defaultSuccessUrl("/welcome", true)
@@ -57,7 +57,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/images/**");
+		web.ignoring().antMatchers("/scripts/**","/resources/**", "/static/**", "/css/**", "/js/**", "/images/**");
 	}
 
 }
