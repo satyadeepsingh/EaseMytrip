@@ -53,11 +53,10 @@ html {
 				<div class="row">
 					<div class="col-sm-10 offset-sm-1 text-center">
 						<h5 class="display-3"
-							style="color: gold; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">Login
-							to EaseMyShip</h5>
+							style="color: gold; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">Login</h5>
 						<br>
 						<div class="info-form">
-							<form name="loginForm" action="/login" method="POST"
+							<form action="/login" method="POST" name="loginForm"
 								class="justify-content-center">
 								<div class="form-group">
 									<label class="sr-only">Username</label> <input type="text"
@@ -69,11 +68,9 @@ html {
 										name="password" ng-model="password" class="form-control"
 										required>
 								</div>
-
-								<button type="submit" class="btn btn-success" value="login"
-									>okay,go!</button>
+								<button type="submit" class="btn btn-success" value="login">okay, go!</button>
 							</form>
-							<span style="color: red; font-weight: 500">{{title}}
+							<span style="color: red; font-weight: 500" ng-if="value">{{title}}
 								{{statusbody}}</span>
 						</div>
 						<br> <a href="#nav-main"

@@ -1,29 +1,18 @@
 'use strict';
-var app = angular.module('loginApp',[]);
-app.controller('loginCtrl', function($scope,$http,$window) {
-    $scope.username = null;
-    $scope.password = null;
-    $scope.status=null;
-    $scope.title=null;
-    $scope.statusbody=null;
-    $scope.login = function(value,username,password) {
-        if(value) {
-            var loginData = {
-                username: $scope.username,
-                password: $scope.password
-            }
+var app = angular.module('loginApp', []);
+app.controller ('loginCtrl', function($scope, $location) {
 
-            $http.get('/login', JSON.stringify(loginData))
-            .then(function(response){
-                if(response.data) {
-                    console.log("login success");
-                    console.log(response.status);
-                    console.log(response.data);
-                 }
-            }, function(response) {
-                console.log("login failed");
-                $scope.status="failed";
-            });
-        }
+    var path = $location.absUrl();
+    var patt1 = /error=true/;
+    var result = path.match(patt1);
+    console.log(path);
+    console.log(result);
+    if(result[0] ==='error=true') {
+        $scope.value=true;
+        $scope.title="Login Failed!";
+        $scope.statusbody="Please check your username and password!";
     }
 });
+
+
+				
